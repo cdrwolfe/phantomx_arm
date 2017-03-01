@@ -1,0 +1,21 @@
+<launch>
+  <!-- To use, first set Environment variable PHANTOMX_ARM_TYPE to either:
+   pincher or pincher_wrist (to include additional wrist joint)
+   NOTE: passing arm_type as argument NOT yet fully supported! -->
+   
+  <arg name="simulation" default="false"/>
+  <arg name="arm_type" default="$(optenv PHANTOMX_ARM_TYPE phantomx)"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find phantomx_arm_description)/urdf/$(arg arm_type)_arm.urdf.xacro'"/>
+  <node name="robot_state_pub" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name="fake_joint_pub" pkg="phantomx_arm_bringup" type="fake_joint_pub.py"/>
+
+  <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+    <rosparam file="$(find phantomx_arm_bringup)/config/$(arg arm_type)_arm.yaml" command="load"/>
+    <param name="sim" value="$(arg simulation)"/>
+  </node>
+
+ <node name="gripper_controller" pkg="arbotix_controllers" type="gripper_controller" output="screen">
+       <rosparam file="$(find phantomx_arm_bringup)/config/$(arg arm_type)_gripper.yaml" command="load" />
+  </node>
+</launch>

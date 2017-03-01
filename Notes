@@ -1,0 +1,1 @@
+If MoveIt! can not find the phantomx_arm_arm_kinematics plugin then go to catkin_ws/devel/lib/ and get libphantomx_arm_moveit_ikfast_kinematics_plugin.so and mvoe it to opt/ros/indigo/lib/

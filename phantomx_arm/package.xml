@@ -1,0 +1,24 @@
+<package>
+  <name>phantomx_arm</name>
+  <version>0.0.1</version>
+  <description>
+    The phantomx arm meta package.
+  </description>
+  <author>Jorge Santos of turtlebot fame</author>
+  <maintainer email="cdr.wolfe@gmail.com">Wolfe</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>phantomx_arm_bringup</run_depend>
+  <run_depend>phantomx_arm_description</run_depend>
+  <run_depend>phantomx_arm_ikfast_plugin</run_depend>
+  <run_depend>phantomx_arm_block_manipulation</run_depend>
+  <run_depend>phantomx_arm_kinect_calibration</run_depend>
+  <run_depend>phantomx_arm_moveit_config</run_depend>
+  <run_depend>phantomx_arm_moveit_demos</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
