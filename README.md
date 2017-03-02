@@ -17,9 +17,9 @@ Open the phantomx_arm.urdf.xacro file and remove or edit out the link 'base_link
 ```
 
 Next open up the 'kobuki_hexagons_kinect.urdf.xacro' file and add:
-
-<xacro:include filename="$(find turtlebot_arm_description)/urdf/turtlebot_arm.urdf.xacro" />
-
+```
+<xacro:include filename="$(find phantomx_arm_description)/urdf/phantomx_arm.xacro"/>
+```
 This will run the xacro which will then add the arm. To be hoenst I'm not sure whether you just can't set it up using the previous file, but oh well.
 
 This is for a turtlebot setup that has:
