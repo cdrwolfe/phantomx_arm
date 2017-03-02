@@ -22,10 +22,10 @@
     <!-- As we don't have here a turtlebot base, add a base_link link as its location reference -->
     <link name="base_link"/>
 
-    <!-- Turtlebot arm macro -->
-    <turtlebot_arm parent="base_link" color="Gray" gripper_color="Gray"   pincher_gripper="true" phantomx_gripper="false">
+    <!-- Phantomx arm macro -->
+    <phantomx_arm parent="base_link" color="Gray" gripper_color="Gray"   pincher_gripper="true">
       <!-- Place the "floating" arm at the location it should be if mounted on a turtlebot,
            as pick and place and other demos assume this location -->
       <origin xyz="0.1 0.03 0.435"/>
-    </turtlebot_arm>
+    </phantomx_arm>
 </robot>
