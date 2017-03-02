@@ -38,6 +38,6 @@ echo "export TURTLEBOT_3D_SENSOR=kinect" >> .bashrc
 ```
 Also if you actually have a real arm physically attached then you can add:
 ```
-<include file="$(find turtlebot_arm_bringup)/launch/arm.launch"/>
+<include file="$(find phantomx_arm_bringup)/launch/arm.launch"/>
 ```
 to your robot.launch file
